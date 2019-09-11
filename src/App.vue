@@ -1,0 +1,28 @@
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <HelloWorld/>
+  </div>
+</template>
+
+<script>
+import HelloWorld from './components/HelloWorld'
+
+export default {
+  name: 'App',
+  components: {  //注册组件
+    HelloWorld     // 左边是标识名称
+   }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
