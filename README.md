@@ -61,5 +61,30 @@ $gobalEventBus    $bus
 ## vue-ajax
   声明使用vue插件
    response.data=result  
-
+## UI组件库
    按需打包
+   基本语法认识:
+   引入:  import ....
+   注册:  
+   ````
+   Vue.component(Button.name,Button)
+   ````
+   默认暴露可以随便写
+
+   传递数据
+
+![1568269047121](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1568269047121.png)
+
+data里面   反向代理
+路由导航   路由跳转
+声明式 和 编程式导航  写代码去跳转 history lication
+
+缓存路由组件
+<keep-alive></keep-alive> 
+
+
+npm install -g typescript
+tsc-v
+
+'outDir' 
+转换数值失败NAN
