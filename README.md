@@ -13,6 +13,19 @@
 ## 组件通信
 ### props
 用于父组件向子组件传递数据
+一般/非函数  父-->子
+通信函数  是为了反向传数据  子组件-->父组件
+### vue自定义事件
+给子组件标签绑定事件监听
+子向父通信
+### 全局事件总线
+   分发事件 发送数据  回调函数     组件继承vm的方法   vm可以用vue的原型对象的方法
+### slot 
+父向子
+### vuex
+    多组件共享状态
+    组件间的关系也没有限制  
+    同一个事件可以对应对个容器 
 #### 原型对象
 this.__proto__.__proto__就是Vue的原型对象
 this._proto_就是Vue的实例对象vm
@@ -27,6 +40,12 @@ export default {
     HelloWorld     // 左边是标识名称
    }
 }
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  components: { App },
+  template: '<App/>'   //模版: 标签格式的字符串
+})
 ````
 在子组件绑定监听,在父组件中分发
 mouted  绑定事件监听  接受数据
@@ -38,3 +57,9 @@ Vue.prototype.$bus=new Vue
 $gobalEventBus    $bus
 ### slot
 传递标签结构
+
+## vue-ajax
+  声明使用vue插件
+   response.data=result  
+
+   按需打包
