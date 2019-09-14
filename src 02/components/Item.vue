@@ -20,6 +20,7 @@
     },
     props:{
       todo:Object,
+      removeTodo:Function,
       index:Number,
       completeTodo:Function
     },
@@ -45,9 +46,7 @@
       },
       removeItem(){
         if(confirm('你忍心删除我吗?')){
-            // this.removeTodo(this.index)      
-            // 分发事件
-            this.$bus.$emit('removeTodo',this.index)
+            this.removeTodo(this.index)      
         }
       }
   },

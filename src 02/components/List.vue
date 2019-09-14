@@ -2,6 +2,7 @@
     <ul class="todo-main">
      <Item v-for="(todo,index) in todos" 
      :todo="todo" 
+     :removeTodo="removeTodo" 
      :index="index" 
      :completeTodo="completeTodo">
      </Item>
@@ -10,7 +11,7 @@
 <script type="text/ecmascript-6">
 import  Item from './Item.vue'
   export default {
-     props:['todos','completeTodo'],
+     props:['todos','removeTodo','completeTodo'],
      components:{
        Item
      }

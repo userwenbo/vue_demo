@@ -11,7 +11,12 @@
         title: ''
       }
     },
-
+     props:{
+       addTodo: {
+        type: Function,
+        required: true,
+      }
+     },
      methods: {
        add(){
          // 对输入数据进行检查
@@ -25,8 +30,7 @@
               complete:false
             }
          // 调用addTodo来添加todo
-          //分发事件
-          this.$emit('addTodo',todo)
+           this.addTodo(todo)
           // 清除输入
            this.title=''
        }

@@ -4,14 +4,7 @@
         <!-- <Header @addTodo="addTodo"/> -->
         <Header ref="header"/>
         <List :todos="todos" :completeTodo="completeTodo"/>
-        <Footer>
-            <input type="checkbox" v-model="checkAll" slot="left"/>
-            <span slot="middle">
-              <span>已完成{{completeSize}}</span> / 全部{{todos.length}}
-            </span>
-            <!--传递的标签在父组件中解析 -->
-            <button class="btn btn-danger" v-show="completeSize" @click="clearAllComplete" slot="right">清除已完成任务</button>
-        </Footer>
+        <Footer :todos="todos" :selectAll="selectAll" :clearAllComplete="clearAllComplete"/>
     </div>
     </div>
 </template> 
@@ -25,19 +18,6 @@ import  Footer  from './components/Footer.vue'
        return {
          todos:[]
        }
-     },
-    computed:{
-      completeSize(){
-        return this.todos.reduce((pre,todo)=>pre+(todo.complete?1:0),0)
-      },
-      checkAll:{
-        get(){
-          return this.todos.length===this.completeSize  //返回布尔值  true 
-        },
-        set(value){   //是true或false,最新的值
-            this.selectAll(value)
-        }
-      }
      },
      mounted(){
        //模拟异步读取todos数据

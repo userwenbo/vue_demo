@@ -1,31 +1,16 @@
 <template>
     <div class="todo-footer">
     <label>
-      <input type="checkbox" v-model="checkAll"/>
+       <slot name="left"></slot>    
     </label>
-    <span>
-      <span>已完成{{completeSize}}</span> / 全部{{todos.length}}
-    </span>
-    <button class="btn btn-danger" v-show="completeSize" @click="clearAllComplete">清除已完成任务</button>
+       <slot name="middle"></slot>
+   
+      <slot name="right"></slot>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   export default {
-     props:['todos','selectAll','clearAllComplete'],
-     computed:{
-        completeSize(){
-          return this.todos.reduce((pre,todo)=>pre+(todo.complete?1:0),0)
-        },
-        checkAll:{
-          get(){
-            return this.todos.length===this.completeSize  //返回布尔值  true 
-          },
-          set(value){   //是true或false,最新的值
-             this.selectAll(value)
-          }
-        }
-     }
   }
 </script>
 
