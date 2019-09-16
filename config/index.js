@@ -12,9 +12,9 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:4000',
         changeOrigin: true,
-        pathRewrite: {
+        pathRewrite: {  //告诉代理服务器，在转发请求时吧path开头/api去掉  
           '^/api': ''
         }
       }

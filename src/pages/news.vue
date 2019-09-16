@@ -1,9 +1,9 @@
 <template>
-    <ul>
-      <li>new001</li>
-      <li>new002</li>
-      <li>new003</li>
-    </ul>
+  <ul>
+    <li>new001</li>
+    <li>new002</li>
+    <li>new003</li>
+  </ul>
 </template>
 
 <script type="text/ecmascript-6">

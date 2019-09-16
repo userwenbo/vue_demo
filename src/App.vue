@@ -19,7 +19,11 @@
         <div class="panel">
           <div class="panel-body">
             <!-- 在此显示当前路由组件 -->
-            <router-view/>
+            <!-- 保持活着 -->
+             <keep-alive>
+              <router-view/>
+             </keep-alive>
+            
           </div>
         </div>
       </div>

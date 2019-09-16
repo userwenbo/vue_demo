@@ -19,7 +19,6 @@
        search(){
          const searchName=this.searchName.trim()
          if(searchName){
-
            //分发事件
             this.$eventBus.$emit('search',searchName)
          }
