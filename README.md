@@ -62,7 +62,7 @@ $gobalEventBus    $bus
   声明使用vue插件
    response.data=result  
 ## UI组件库
-   按需打包
+   按需引入打包    用来展示页面的组件库
    基本语法认识:
    引入:  import ....
    注册:  
@@ -74,13 +74,15 @@ $gobalEventBus    $bus
    传递数据
 
 ![1568269047121](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1568269047121.png)
-
+## vue-router
 data里面   反向代理
 路由导航   路由跳转
 声明式 和 编程式导航  写代码去跳转 history lication
-
+mode:hash/history
 缓存路由组件
-<keep-alive></keep-alive> 
+<keep-alive>
+      <router-view></router-view>
+</keep-alive> 
 
 
 npm install -g typescript
@@ -88,3 +90,32 @@ tsc-v
 
 'outDir' 
 转换数值失败NAN
+将路由参数数据映射成路由组件的标签属性
+可以给route-view添加属性   组件要使用声明就可以了 
+可以用下面这种写法
+new Vue({
+  render: h=>h(App)   //返回组件标签 <App/>,将其渲染到el上
+}).$mount('#App')
+
+## vue源码分析
+如何初始化显示
+原理:数据绑定-->双向数据绑定
+
+Array.prototype.slice.call()
+fn.call(Obj)  调用执行函数      让一个对象的方法,成为任意函数或对象的方法
+
+fn.bind(Obj)   返回一个新函数,执行新函数就会执行原来的函数  且原函数的this是第一个参数值 
+
+hasOwnProperty()  判断prop是否是obj自身的属性
+children 所有标签元素
+
+变量对象  包含很多变量的对象
+回调函数   什么时候调用 调用干嘛的  this指向
+console  简单测试
+       []== ![]  右边布尔值  不同类型比较转换为数字比较   同类型不用转换
+debugg调试   调试的一种
+恢复程序运行
+单步跳过
+进入函数内部的第一条语句
+跳出当前函数内部 下面语句执行完
+临时让断点失效
