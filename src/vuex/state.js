@@ -1,0 +1,7 @@
+/* 包含n个状态属性的对象 */
+export default {
+  firstView:true,
+  loading:false,
+  users:[],
+  errorMsg:''
+}
